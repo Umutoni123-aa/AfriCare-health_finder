@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Testing - Health Finder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status.loading {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 API Testing Dashboard</h1>
+        <p>Test placeholders for APIs</p>
+
+        <!-- Test 1: Geocoding API -->
+        <div class="test-section">
+            <h2>Test 1: Geocoding API</h2>
+            <p>test for city coordinates</p>
+            <button onclick="testGeocoding()">Test Geocoding (Kigali, Rwanda)</button>
+            <div id="geocoding-status"></div>
+            <pre id="geocoding-output"></pre>
+        </div>
+
+        <!-- Test 2: Health Facilities -->
+        <div class="test-section">
+            <h2>Test 2: Health Facilities</h2>
+            <p>test for health facilities</p>
+            <button onclick="testOverpass()">Test Facilities (Kigali)</button>
+            <div id="overpass-status"></div>
+            <pre id="overpass-output"></pre>
+        </div>
+
+        <!-- Test 3: Full Search Flow -->
+        <div class="test-section">
+            <h2>Test 3: Full Search Flow</h2>
+            <p>Simulated full search process</p>
+            <button onclick="testFullSearch()">Test Full Search</button>
+            <div id="full-status"></div>
+            <pre id="full-output"></pre>
+        </div>
+    </div>
+
+    <script>
+        function simulateDelay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function testGeocoding() {
+            const statusDiv = document.getElementById('geocoding-status');
+            const outputDiv = document.getElementById('geocoding-output');
+
+            statusDiv.innerHTML = '<div class="status loading">⏳ Simulating Geocoding API test...</div>';
+            outputDiv.textContent = '';
+            await simulateDelay(1000);
+
+            // Simulated data
+            const data = [{city: "Kigali", country: "Rwanda", lat: -1.9441, lon: 30.0619}];
+
+            statusDiv.innerHTML = '<div class="status success">✅ SUCCESS: Simulated geocoding data available!</div>';
+            outputDiv.textContent = JSON.stringify(data, null, 2);
+        }
+
+        async function testOverpass() {
+            const statusDiv = document.getElementById('overpass-status');
+            const outputDiv = document.getElementById('overpass-output');
+
+            statusDiv.innerHTML = '<div class="status loading">⏳ Simulating facilities API test...</div>';
+            outputDiv.textContent = '';
+            await simulateDelay(1000);
+
+            // Simulated data
+            const data = [
+                {name: "Kigali Hospital", type: "Hospital"},
+                {name: "Nyamirambo Clinic", type: "Clinic"},
+                {name: "Gikondo Health Center", type: "Health Center"}
+            ];
+
+            statusDiv.innerHTML = '<div class="status success">✅ SUCCESS: Simulated facilities data available!</div>';
+            outputDiv.textContent = JSON.stringify(data, null, 2);
+        }
+
+        async function testFullSearch() {
+            const statusDiv = document.getElementById('full-status');
+            const outputDiv = document.getElementById('full-output');
+
+            statusDiv.innerHTML = '<div class="status loading">⏳ Simulating full search test...</div>';
+            outputDiv.textContent = 'Step 1: Simulate geocoding...\n';
+            await simulateDelay(1000);
+
+            const geocode = {city: "Kigali", lat: -1.9441, lon: 30.0619};
+            outputDiv.textContent += `✅ Coordinates found: ${geocode.lat}, ${geocode.lon}\n\n`;
+            outputDiv.textContent += 'Step 2: Simulate health facilities search...\n';
+            await simulateDelay(1000);
+
+            const facilities = [
+                {name: "Kigali Hospital", type: "Hospital"},
+                {name: "Nyamirambo Clinic", type: "Clinic"}
+            ];
+
+            outputDiv.textContent += `✅ Found ${facilities.length} facilities\n`;
+            outputDiv.textContent += JSON.stringify(facilities, null, 2);
+
+            statusDiv.innerHTML = '<div class="status success">✅ SUCCESS: Simulated full search complete!</div>';
+        }
+
+        window.onload = function() {
+            console.log('Simulated API Test page loaded');
+        };
+    </script>
+</body>
+</html>

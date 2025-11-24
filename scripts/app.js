@@ -100,7 +100,7 @@ function createFacilityCard(data) {
     if (data.opening_hours && data.opening_hours !== 'Hours not available') infoHTML += `<p>🕒 ${data.opening_hours}</p>`;
     if (data.operator && data.operator !== 'Unknown') infoHTML += `<p>🏢 ${data.operator}</p>`;
 
-    // Always add directions link
+    // directions link
     infoHTML += `<p><a href="https://www.google.com/maps/dir/?api=1&destination=${data.coordinates.lat},${data.coordinates.lon}" target="_blank" style="font-weight:bold; color:#667eea;">🗺️ Directions</a></p>`;
 
     card.innerHTML = `

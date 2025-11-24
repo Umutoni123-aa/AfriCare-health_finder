@@ -1,0 +1,33 @@
+/**
+ * Configuration File
+ * Store API keys and app settings here
+ */
+
+const CONFIG = {
+    // API Keys
+    API_KEYS: {
+        // Example: rapidapi: 'your-key-here'
+    },
+    
+    // Application Settings
+    APP: {
+        defaultCity: 'Kigali',
+        defaultCountry: 'Rwanda',
+        maxResults: 50,
+        mapZoom: 13
+    },
+    
+    // API Endpoints
+    ENDPOINTS: {
+        geocoding: 'https://nominatim.openstreetmap.org/search',
+        overpass: 'https://overpass-api.de/api/interpreter'
+    },
+    
+    // Feature Flags
+    FEATURES: {
+        enableCache: false,
+        enableAnalytics: false
+    }
+};
+
+// window.APP_CONFIG = CONFIG;
