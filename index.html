@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriCare Health Finder - Healthcare Directory</title>
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>AfriCare Health Finder</h1>
+                <p>“Knowledge is power — you're one step closer to better health.”</p>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <div class="search-form">
+                    <input type="text" id="cityInput" placeholder="City or neighborhood" value="Kigali">
+                    
+                    <select id="countrySelect">
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                    </select>
+                    
+                    <select id="facilityType">
+                        <option value="all">All Facilities</option>
+                        <option value="hospital">Hospitals</option>
+                        <option value="clinic">Clinics</option>
+                        <option value="doctors">Doctors</option>
+                        <option value="pharmacy">Pharmacies</option>
+                    </select>
+                    
+                    <button id="searchBtn">Search</button>
+                </div>
+                
+                <div class="info-box">
+                    <strong>💡 How it works:</strong> Enter a city or neighborhood (e.g., Kimironko, Gikondo), select your country, pick the type of health facility you need, and click "Search".
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="content">
+            <div class="results" id="results">
+                <div class="empty-state">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#cbd5e0" stroke-width="1.5" style="margin: 20px auto; display: block;">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <h3>Start Your Search</h3>
+                    <p>Enter a location and click Search to find health facilities</p>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- JavaScript files-->
+    <script src="js/map.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
