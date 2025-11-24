@@ -30,21 +30,19 @@ This Application helps you locate hospitals, clinics, pharmacies, and doctors in
 - Hover on a marker → highlights the corresponding facility card
 - Fully **responsive and mobile-friendly**
 
-\*\*\*4. 🛠 How It Works
+\*4. 🛠 How It Works
 
 1. User enters --city/neighborhood-- and selects **country** & **facility type**.
 2. App uses **OpenStreetMap Nominatim API** to fetch coordinates.
 3. Then, **Overpass API** finds nearby health facilities depending on the one you chose.
 4. Results are shown as **cards** and **map markers**, giving you both info and navigation.
 
-\*\* 💻 Tech Stack
+- 💻 Tech Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Mapping:** Leaflet.js
-- **APIs:**
-- **OpenStreetMap Nominatim** → Geocoding
-- **Overpass API** → Health facilities
-- Fully responsive & optimized for mobile
+* **Frontend:** HTML5, CSS3, JavaScript
+* **Mapping:** Leaflet.js
+* \**APIs:*OpenStreetMap Nominatim → Geocoding, Overpass API → Health facilities\*
+* Fully responsive & optimized for mobile
 
 ## 📁 Project Structure
 
@@ -86,16 +84,11 @@ Student at **African Leadership University**, building tools for real-world prob
 
 ## Server & API Info
 
-**Servers:**
+the application runs on three Ubuntu servers with load balancing
 
-| 6933-web-01 - Ubuntu | 44.203.40.15 
-| 6933-web-02 -Ubuntu | 13.221.14.191
-| 6933-lb-01 | Ubuntu | 44.201.201.53
-
-**APIs:**
-
-- Nominatim (Geocoding)
-- Overpass (Facility search)
+----Load Balancer(6933-lb-01): IP: 44.201.201.53 (Public access URL: http://44.201.201.53)
+----Web Server 1 (6933-web-01): IP: 44.203.40.15 (Direct URL: http://44.203.40.15)
+----Web Server 2 (6933-web-02): IP: 13.221.14.191 (Direct URL: http://13.221.14.191)
 
 ## 📚 Credits & Thanks
 
