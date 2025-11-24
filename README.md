@@ -1,7 +1,7 @@
 🏥 AfriCare Health Finder
 
 ![Leaflet.js](https://img.shields.io/badge/Leaflet.js-4CAF50?style=flat&logo=leaflet&logoColor=white)
-
+Demo Video: [Watch the AfriCare Health Finder Demo] https://youtu.be/fjt7J8J3Uls?si=FgI634y5P8C0pl1G
 AfriCare Health Finder, a user-friendly web application to find healthcare facilities across Africa.
 Right now based on 8 countries ( Rwanda, Kenya, Egypt, Uganda, South Africa, Tanzania, Nigeria, Ghana)
 
